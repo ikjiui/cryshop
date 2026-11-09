@@ -256,3 +256,8 @@ dialog{width:calc(100% - 34px);max-width:440px;border:1px solid #254564;border-r
   position: relative;
   z-index: 2;
 }
+.wallet-card .card-chip {
+  background: gold !important;
+  color: black !important;
+  border: 3px solid yellow !important;
+}

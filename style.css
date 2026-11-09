@@ -118,17 +118,6 @@ dialog{width:calc(100% - 34px);max-width:440px;border:1px solid #254564;border-r
   letter-spacing: 3px;
 }
 
-.card-chip {
-  width: 47px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #c6e5ff, #478ce5);
-  color: #174b9c;
-  font-size: 25px;
-}
-
 .card-balance > span {
   color: #c6ddff;
   font-size: 12px;
@@ -218,14 +207,6 @@ dialog{width:calc(100% - 34px);max-width:440px;border:1px solid #254564;border-r
   color: #c4e2ff !important;
 }
 
-.card-chip {
-  background: linear-gradient(135deg, #e3edff, #78baff) !important;
-  color: #174b9c !important;
-  border-radius: 8px;
-  width: 45px;
-  height: 35px;
-}
-
 .card-balance > span {
   color: #d4e8ff;
   font-size: 12px;
@@ -256,22 +237,6 @@ dialog{width:calc(100% - 34px);max-width:440px;border:1px solid #254564;border-r
   position: relative;
   z-index: 2;
 }
-.wallet-card .card-chip {
-  background: gold !important;
-  color: black !important;
-  border: 3px solid yellow !important;
-}
-.wallet-card .card-chip {
-  width: 45px !important;
-  height: 36px !important;
-  background: linear-gradient(135deg, #fff2b0, #d4a23e, #f8dc83) !important;
-  border: 1px solid #ffe7a0 !important;
-  border-radius: 8px !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
 
 .wallet-card .chip-lines {
   width: 100%;
@@ -288,22 +253,6 @@ dialog{width:calc(100% - 34px);max-width:440px;border:1px solid #254564;border-r
 }
 
 /* PUCE BANCAIRE CRYSHOP */
-.wallet-card .card-chip {
-  width: 45px !important;
-  height: 36px !important;
-  background: linear-gradient(
-    135deg,
-    #fff2bd,
-    #d6a43d 45%,
-    #f9df91
-  ) !important;
-  border: 1px solid #ffe7a0 !important;
-  border-radius: 8px !important;
-  display: grid !important;
-  place-items: center !important;
-  padding: 0 !important;
-  overflow: hidden;
-}
 
 .wallet-card .chip-lines {
   width: 100%;

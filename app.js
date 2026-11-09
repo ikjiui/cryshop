@@ -64,7 +64,7 @@ function escapeHtml(value) {
 function renderLists() {
   $("#orders").innerHTML = orders.length
     ? orders.map(o => `<div class="row-item"><span>${escapeHtml(o.name)}<br><small>${escapeHtml(o.date)}</small></span><b class="status">Démo locale</b></div>`).join("")
-    : '<div class="empty-state">Tu n\\'as pas encore de commande.</div>';
+   : `<div class="empty-state">Tu n'as pas encore de commande.</div>`;
   $("#homeOrders").innerHTML = orders.length
     ? orders.slice(0,3).map(o => `<div class="row-item"><span>${escapeHtml(o.name)}<br><small>${escapeHtml(o.date)}</small></span><b class="status">${money(o.price)}</b></div>`).join("")
     : '<div class="empty-state">Tes commandes apparaîtront ici.</div>';

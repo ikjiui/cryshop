@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>CryShop — Digital Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="CryShop accueil">
+        <span class="brand-mark">C</span>
+        <span><b>CryShop</b><small>DIGITAL STORE</small></span>
+      </a>
+      <button class="icon-button" id="profileBtn" aria-label="Profil">👤</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="pulse"></span> BOUTIQUE NUMÉRIQUE</div>
+        <h1>Le digital,<br><span>en toute simplicité.</span></h1>
+        <p>Découvre nos produits numériques et reçois tes achats automatiquement.</p>
+        <button class="primary-button" data-go="shop">Explorer la boutique <span>↗</span></button>
+        <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+      </section>
+
+      <section class="wallet-card">
+        <div class="wallet-head"><span>MON PORTEFEUILLE</span><span class="wallet-icon">◈</span></div>
+        <div class="balance" id="balance">0,00 €</div>
+        <div class="wallet-foot"><span>Solde disponible</span><button class="light-button" data-go="wallet">＋ Recharger</button></div>
+      </section>
+
+      <section class="section" id="homeHighlights">
+        <div class="section-title"><div><span class="eyebrow">SÉLECTION</span><h2>À découvrir</h2></div><button class="text-button" data-go="shop">Tout voir →</button></div>
+        <div class="product-grid compact" id="featured"></div>
+      </section>
+
+      <section class="section page hidden" id="shopPage">
+        <div class="section-title"><div><span class="eyebrow">CATALOGUE</span><h2>La boutique</h2></div></div>
+        <div class="search-wrap"><span>⌕</span><input id="search" placeholder="Rechercher un produit…"></div>
+        <div class="filters" id="filters"></div>
+        <div class="product-grid" id="products"></div>
+      </section>
+
+      <section class="section page hidden" id="walletPage">
+        <div class="section-title"><div><span class="eyebrow">PORTEFEUILLE</span><h2>Recharger mon solde</h2></div></div>
+        <div class="info-box">Choisis un moyen de paiement. Le solde est crédité uniquement après confirmation du paiement.</div>
+        <div class="form-card">
+          <label for="amount">Montant de la recharge (€)</label>
+          <input id="amount" type="number" min="5" step="1" placeholder="Ex. 20">
+          <div class="quick-amounts"><button data-amount="10">10 €</button><button data-amount="20">20 €</button><button data-amount="50">50 €</button><button data-amount="100">100 €</button></div>
+          <h3>Choisir un paiement</h3>
+          <button class="payment-option" data-payment="crypto"><span class="pay-icon">₿</span><span><b>Cryptomonnaie</b><small>BTC · ETH · SOL · LTC</small></span><span class="chevron">›</span></button>
+          <button class="payment-option" data-payment="paypal"><span class="pay-icon paypal">P</span><span><b>PayPal</b><small>Envoi de preuve puis vérification manuelle</small></span><span class="chevron">›</span></button>
+          <p class="tiny-note">Les demandes de recharge sont simulées dans cette maquette. Aucun paiement réel n'est effectué.</p>
+        </div>
+        <div class="section-title sub-title"><div><span class="eyebrow">ACTIVITÉ</span><h2>Mes recharges</h2></div></div>
+        <div id="topups" class="list-card empty-state">Aucune recharge pour le moment.</div>
+      </section>
+
+      <section class="section page hidden" id="ordersPage">
+        <div class="section-title"><div><span class="eyebrow">ACHATS</span><h2>Mes commandes</h2></div></div>
+        <div id="orders" class="list-card empty-state">Tu n'as pas encore de commande.</div>
+      </section>
+
+      <section class="section page hidden" id="supportPage">
+        <div class="section-title"><div><span class="eyebrow">ASSISTANCE</span><h2>Centre de support</h2></div></div>
+        <div class="support-banner"><div class="support-symbol">✳</div><div><b>Besoin d'aide ?</b><p>Ouvre un ticket, notre équipe pourra te répondre.</p></div></div>
+        <button class="primary-button full" id="openTicket">＋ Ouvrir un ticket</button>
+        <div class="section-title sub-title"><div><span class="eyebrow">SUIVI</span><h2>Mes tickets</h2></div></div>
+        <div id="tickets" class="list-card empty-state">Aucun ticket ouvert.</div>
+      </section>
+
+      <section class="section page hidden" id="profilePage">
+        <div class="section-title"><div><span class="eyebrow">COMPTE</span><h2>Mon profil</h2></div></div>
+        <div class="profile-card"><div class="avatar">CS</div><div><b id="userName">Client CryShop</b><small id="userId">Connecte-toi depuis Telegram</small></div></div>
+        <div class="menu-card"><button data-go="orders">📦 <span>Mes commandes</span><i>›</i></button><button data-go="wallet">◈ <span>Mon portefeuille</span><i>›</i></button><button data-go="support">🎫 <span>Support</span><i>›</i></button></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-tab="home"><span>⌂</span><small>Accueil</small></button>
+      <button class="nav-item" data-tab="shop"><span>▦</span><small>Boutique</small></button>
+      <button class="nav-item" data-tab="orders"><span>▤</span><small>Commandes</small></button>
+      <button class="nav-item" data-tab="support"><span>✳</span><small>Support</small></button>
+      <button class="nav-item" data-tab="profile"><span>♙</span><small>Profil</small></button>
+    </nav>
+  </div>
+
+  <dialog id="modal">
+    <div class="modal-head"><span class="eyebrow">CRYSHOP</span><button class="close-modal" aria-label="Fermer">×</button></div>
+    <div id="modalContent"></div>
+  </dialog>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
